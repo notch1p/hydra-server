@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Dashboard } from "./pages/Dashboard";
 import { TaskView } from "./pages/TaskView";
 import { Login } from "./pages/Login";
+import { DatabaseQuery } from "./pages/DatabaseQuery";
 import { ProtectedRoute } from "./components/ProtectedRoute";
 import "./App.css";
 
@@ -24,6 +25,14 @@ function App() {
             element={
               <ProtectedRoute>
                 <TaskView />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/database"
+            element={
+              <ProtectedRoute>
+                <DatabaseQuery />
               </ProtectedRoute>
             }
           />

@@ -3,6 +3,8 @@ import { join } from "path";
 import { serveStaticFile } from "./static";
 import { verifyApiKey } from "./auth";
 import { getTasks, getTaskStats, getTaskById } from "./tasks";
+import { executeQuery } from "./db";
+import { generateQuery } from "./generateQuery";
 
 const indexHtml = readFileSync(
   join(process.cwd(), "dist", "index.html"),
@@ -41,5 +43,13 @@ export default {
 
   "/api/tasks/:id": {
     GET: getTaskById,
+  },
+
+  "/api/db/query": {
+    POST: executeQuery,
+  },
+
+  "/api/db/generate-query": {
+    POST: generateQuery,
   },
 };
