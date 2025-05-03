@@ -49,7 +49,7 @@ export async function registerNotifications(req: Request) {
           lastCheckedAt: null,
         })
         .onConflictDoUpdate({
-          target: redditAccounts.username,
+          target: [redditAccounts.customerId, redditAccounts.username],
           set: {
             username: account.username,
             session: encryptedSession,
