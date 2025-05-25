@@ -9,7 +9,6 @@ export default class PushNotifications {
     body: string,
     badge: number = 0,
   ) {
-    console.log("message sent");
     await this.expo.sendPushNotificationsAsync([
       {
         to: token,

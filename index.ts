@@ -17,6 +17,9 @@ const server = serve({
     "/api/*": {
       OPTIONS: corsPreflight,
     },
+    "/api/status": {
+      GET: () => new Response("Hydra server is up", { status: 200 }),
+    },
 
     ...dashboardRoutes,
     ...customersRoutes,

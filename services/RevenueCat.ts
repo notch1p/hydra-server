@@ -40,6 +40,9 @@ export class RevenueCat {
   }
 
   static async isCustomerSubscribed(customerId: string) {
+    if (process.env.IS_CUSTOM_SERVER === "true") {
+      return true;
+    }
     const response = await fetch(
       `https://api.revenuecat.com/v2/projects/${this.projectId}/customers/${customerId}`,
       {

@@ -4,6 +4,7 @@
   "type": "module",
   "private": true,
   "scripts": {
+    "start": "bun run index.ts",
     "dev": "bun --hot run index.ts",
     "lint:fix": "eslint --fix . && bun run prettier . --write",
     "migrate": "bunx drizzle-kit generate --dialect sqlite --schema ./db/schema.ts --out ./db/migrations",
