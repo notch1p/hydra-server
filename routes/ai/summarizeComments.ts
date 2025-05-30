@@ -44,6 +44,7 @@ export async function summarizeComments(req: Request) {
   // Generate the summary using Groq
   const { text, usage } = await generateText({
     model: groq("llama-3.1-8b-instant"),
+    maxTokens: 1_000,
     messages: [
       {
         role: "system",

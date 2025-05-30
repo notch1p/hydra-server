@@ -75,6 +75,7 @@ export async function filterPosts(req: Request) {
   // Generate the filtered posts using Groq
   const { object, usage } = await generateObject({
     model: groq("llama-3.1-8b-instant"),
+    maxTokens: 1_000,
     schema: responseSchema,
     messages: [
       {
